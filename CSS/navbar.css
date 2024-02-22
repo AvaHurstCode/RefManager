@@ -7,6 +7,8 @@ nav {
     justify-content: space-between;
     align-items: center;
     background-color: black;
+    position: sticky;
+    top: 0;
     ul {
         display: flex;
         width: 90%;
