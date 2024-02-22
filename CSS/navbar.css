@@ -9,15 +9,16 @@ nav {
     background-color: black;
     position: sticky;
     top: 0;
+    font-size: 1.5rem;
     ul {
         display: flex;
-        width: 90%;
+        width: 85%;
         li {
-            padding: 2rem;
+            padding: 1.5rem;
         }
     }
     aside {
-        padding: 2rem;
+        padding: 1rem 3rem;
     }
     a {
         color: white;

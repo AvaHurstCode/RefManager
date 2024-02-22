@@ -28,3 +28,40 @@ Key concepts to stick to:
         font-size: 2rem;
     }
 }
+/* Card List */
+.card-list {
+    color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    background-color: black;
+    header {
+        font-size: 5.5rem;
+        padding: 1rem 1rem 1rem 1rem;
+    }
+    main {
+        width: 70%;
+        padding: 1.5rem;
+        ul {
+            display: flex;
+            justify-content: space-evenly;
+            li {
+                background-color: rgb(51, 51, 51);
+                border-radius: 1rem;
+                padding: 2rem;
+                width: 28%;
+                h3 {
+                    font-size: 3rem;
+                    padding: 1rem;
+                }
+                p {
+                    font-size: 1.5rem;
+                    padding: 1rem;
+                }
+            }
+        }
+    }
+}
+.card {
+}
