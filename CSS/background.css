@@ -11,8 +11,8 @@
     .dot {
         position: absolute;
         background-color: var(--element10);
-        width: 17rem;
-        height: 17rem;
+        width: 12rem;
+        height: 12rem;
         border-radius: 50%;
     }
     #dot1 {
