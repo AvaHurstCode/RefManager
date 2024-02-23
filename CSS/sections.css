@@ -15,11 +15,12 @@ Key concepts to stick to:
 }
 /* Hero */
 .hero {
+    font-weight: 600;
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: space-evenly;
-    height: 25svh;
+    height: max(65svh, 20rem);
     h1 {
         font-size: 10rem;
         text-align: center;
@@ -37,31 +38,45 @@ Key concepts to stick to:
     flex-direction: column;
     background-color: black;
     header {
-        font-size: 5.5rem;
-        padding: 1rem 1rem 1rem 1rem;
+        padding: 1rem 1rem 0.2rem 1rem;
     }
     main {
-        width: 70%;
+        width: 80%;
         padding: 1.5rem;
         ul {
             display: flex;
             justify-content: space-evenly;
-            li {
-                background-color: rgb(51, 51, 51);
-                border-radius: 1rem;
-                padding: 2rem;
-                width: 28%;
-                h3 {
-                    font-size: 3rem;
-                    padding: 1rem;
-                }
-                p {
-                    font-size: 1.5rem;
-                    padding: 1rem;
-                }
-            }
+            gap: 1rem;
         }
     }
 }
+/* Individual Card */
 .card {
+    background-color: rgb(51, 51, 51);
+    border-radius: 1rem;
+    padding: 2rem;
+    width: 28%;
+    h3, p {
+        padding: 1rem;
+    }
+}
+
+
+/* Media Query */
+@media (max-width:1000px) {
+    .hero {
+        h1 {
+            font-size: 5.5rem;
+        }
+    }
+    .card-list {
+        ul {
+            flex-direction: column;
+            align-items: center;
+        }
+    }
+    .card {
+        width: 85%;
+    }
+
 }
