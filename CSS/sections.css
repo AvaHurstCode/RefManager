@@ -45,9 +45,8 @@ Key concepts to stick to:
 }
 /* Card List */
 .card-list {
-    background-color: var(--element30);
+    background-color: transparent;
     .card-list-container {
-        color: var(--text30);
         display: flex;
         justify-content: center;
         align-items: center;
@@ -57,6 +56,8 @@ Key concepts to stick to:
         width: 72rem;
         max-width: 90%;
         header {
+            color: var(--text30);
+            font-weight: 700;
             padding: 1rem 1rem 0.2rem 1rem;
         }
         main {
@@ -72,7 +73,8 @@ Key concepts to stick to:
 }
 /* Individual Card */
 .card {
-    background-color: var(--element60);
+    border: 1px solid var(--element10);
+    background-color: var(--element30);
     border-radius: 1rem;
     padding: 2rem;
     width: 28%;

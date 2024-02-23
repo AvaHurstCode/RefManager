@@ -1,20 +1,20 @@
 :root {
     /* 60 */
-    --hue60: 210;
+    --hue60: 200;
     --sat60: 70%;
     --light60: 10%;
     /* 30 */
-    --hue30: 210;
-    --sat30: 70%;
-    --light30: 3%;
+    --hue30: var(--hue60);
+    --sat30: var(--sat60);
+    --light30: 7%;
     /* 10 */
-    --hue10: calc(60 + var(--hue60));
+    --hue10: calc(var(--hue60) + 60);
     --sat10: 40%;
-    --light10: 10%;
+    --light10: 50%;
     /* Element Colours */
         --element60: hsl(var(--hue60), var(--sat60), var(--light60));
         --element30: hsl(var(--hue30), var(--sat30), var(--light30));
-        --element10: hsl(var(--hue10), var(--sat10), 50%);
+        --element10: hsl(var(--hue10), var(--sat10), var(--light10));
     /* Text Colours */
         --text60: hsl(0, 0%, 70%);
         --text30: hsl(0, 0%, 100%);

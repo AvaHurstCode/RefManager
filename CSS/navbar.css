@@ -2,10 +2,12 @@
 Exclusively for styling the navigation bar
 */
 nav {
+    z-index: 100;
     position: sticky;
     top: 0;
     background-color: var(--element30);
     animation: navbar-lower 1s forwards;
+    border-bottom: 1px solid var(--element10);
     .nav-container {
         display: flex;
         justify-content: space-between;
