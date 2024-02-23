@@ -15,44 +15,56 @@ Key concepts to stick to:
 }
 /* Hero */
 .hero {
-    color: var(--accent);
-    background-color: transparent;
-    font-weight: 600;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: space-evenly;
-    height: max(65svh, 20rem);
-    h1 {
-        font-size: 10rem;
-        text-align: center;
-        animation: fall-from-above 1s forwards, fade-in 1s forwards;
-    }
-    h2 {
-        font-size: 2rem;
-        text-align: center;
-        animation: rise-from-below 1s forwards, fade-in 1s forwards;
-        text-wrap: balance;
+    .hero-container {
+        color: var(--accent);
+        background-color: transparent;
+        font-weight: 600;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: space-evenly;
+        height: max(65svh, 20rem);
+        margin-left: auto;
+        margin-right: auto;
+        width: 72rem;
+        max-width: 90%;
+        h1 {
+            font-size: 10rem;
+            text-align: center;
+            animation: fall-from-above 1s forwards, fade-in 1s forwards;
+        }
+        h2 {
+            font-size: 2rem;
+            text-align: center;
+            animation: rise-from-below 1s forwards, fade-in 1s forwards;
+            text-wrap: balance;
+        }
     }
 }
 /* Card List */
 .card-list {
-    color: var(--accent);
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column;
     background-color: var(--primary25);
-    header {
-        padding: 1rem 1rem 0.2rem 1rem;
-    }
-    main {
-        width: 80%;
-        padding: 1.5rem;
-        ul {
-            display: flex;
-            justify-content: space-evenly;
-            gap: 1rem;
+    .card-list-container {
+        color: var(--accent);
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        margin-left: auto;
+        margin-right: auto;
+        width: 72rem;
+        max-width: 90%;
+        header {
+            padding: 1rem 1rem 0.2rem 1rem;
+        }
+        main {
+            width: 100%;
+            padding: 1.5rem;
+            ul {
+                display: flex;
+                justify-content: space-evenly;
+                gap: 1rem;
+            }
         }
     }
 }
@@ -70,8 +82,10 @@ Key concepts to stick to:
 /* Media Query */
 @media (max-width:1000px) {
     .hero {
-        h1 {
-            font-size: 5.5rem;
+        .hero-container {
+            h1 {
+                font-size: 5.5rem;
+            }
         }
     }
     .card-list {
