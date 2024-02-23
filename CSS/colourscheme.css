@@ -22,4 +22,7 @@
         --revtext60: hsl(0, 0%, 10%);
         --revtext30: hsl(0, 0%, 20%);
         --revtext10: hsl(0, 0%, 0%);
+    /* Scrollbar Colour */
+    scrollbar-color: var(--element30) var(--element60);
+    scrollbar-width: thin;
 }

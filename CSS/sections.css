@@ -46,6 +46,8 @@ Key concepts to stick to:
 /* Card List */
 .card-list {
     background-color: transparent;
+    animation: fade-in 1s ease both;
+    animation-timeline: view(70% 10%);
     .card-list-container {
         display: flex;
         justify-content: center;
@@ -73,11 +75,14 @@ Key concepts to stick to:
 }
 /* Individual Card */
 .card {
+    animation: rise-from-below 1s ease both, fade-in 1s ease both;
+    animation-timeline: view(70% 10%);
     border: 1px solid var(--element10);
     background-color: var(--element30);
     border-radius: 1rem;
     padding: 2rem;
     width: 28%;
+    /* animation */
     h3, p {
         padding: 1rem;
     }
