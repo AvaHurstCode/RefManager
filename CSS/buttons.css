@@ -1,0 +1,23 @@
+button {
+    background-color: transparent;
+    border-style: none;
+    padding: 1rem 1.5rem;
+    border-radius: 5rem;
+    font-size: 2rem;
+    font-family: inherit;
+    font-weight: 400;
+}
+
+.button-container {
+    display: flex;
+    gap: 5rem;
+}
+
+.login {
+    background-color: var(--element10);
+}
+
+.signup {
+    color: var(--element10);
+    box-shadow: inset 0 0 0 0.1rem var(--element10);
+}

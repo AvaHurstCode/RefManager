@@ -76,7 +76,7 @@ Key concepts to stick to:
 /* Individual Card */
 .card {
     animation: rise-from-below 1s ease both, fade-in 1s ease both;
-    animation-timeline: view(70% 10%);
+    animation-timeline: view(80% 0%);
     border: 1px solid var(--outline);
     background-color: var(--element30);
     border-radius: 1rem;
