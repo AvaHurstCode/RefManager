@@ -6,23 +6,23 @@
     .blur {
         width: 100%;
         height: calc(100% - 1px);
-        backdrop-filter: blur(10rem);
+        backdrop-filter: blur(15rem);
     }
     .dot {
         position: absolute;
         background-color: var(--accent);
-        width: 15rem;
-        height: 15rem;
+        width: 17rem;
+        height: 17rem;
         border-radius: 50%;
     }
     #dot1 {
         animation: dot1-animation 20s ease-in-out infinite;
     }
     #dot2 {
-        animation: dot2-animation 40s ease-in-out infinite;
+        animation: dot2-animation 30s ease-in-out infinite;
     }
     #dot3 {
-        animation: dot3-animation 60s ease-in-out infinite;
+        animation: dot3-animation 40s ease-in-out infinite;
     }
 }
 
@@ -34,7 +34,7 @@
         translate: 40svw 50svh;
     }
     50% {
-        translate: 90svw 20svh;
+        translate: 80svw 20svh;
     }
     75% {
         translate: 30svw 70svh;
