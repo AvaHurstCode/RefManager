@@ -5,7 +5,7 @@
     height: 100%;
     .blur {
         width: 100%;
-        height: calc(100% - 1px);
+        height: calc(100% - 1px); /* Discovered a bug with google chrome, blur cannot touch or overlap with bottom of screen */
         backdrop-filter: blur(15rem);
     }
     .dot {

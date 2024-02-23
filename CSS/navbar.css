@@ -10,9 +10,10 @@ nav {
     position: sticky;
     top: 0;
     font-size: 1.5rem;
+    animation: navbar-lower 1s forwards;
     ul {
         display: flex;
-        width: 80%;
+        width: 90%;
         a {
             color: var(--accent);
             display: block;
@@ -40,5 +41,15 @@ nav {
         ul {
             width: unset;
         }
+    }
+}
+
+/* Navbar Animation */
+@keyframes navbar-lower {
+    from {
+        translate: 0 -100%;
+    }
+    to {
+        translate: 0 0;
     }
 }
