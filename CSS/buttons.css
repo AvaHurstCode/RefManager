@@ -1,4 +1,5 @@
 button {
+    position: relative;
     background-color: transparent;
     border-style: none;
     padding: 1rem 1.5rem;
@@ -7,18 +8,55 @@ button {
     font-family: inherit;
     font-weight: 400;
     cursor: pointer;
+    overflow: clip;
+    transition: all 0.3s;
+    &:hover {
+        box-shadow: 0px 0px 5px 0px rgba(0,0,0,0.75);;
+    }
 }
 
 .button-container {
     display: flex;
+    flex-direction: column;
+    align-items: center;
     gap: 5rem;
+    position: relative;
+    footer {
+        color: var(--text10);
+        position: absolute;
+        translate: 0 5rem;
+    }
 }
 
 .login {
     background-color: var(--element10);
+    color: var(--revtext60);
+    &:hover {
+        background-color: var(--text30);
+    }
 }
 
-.signup {
-    color: var(--element10);
-    box-shadow: inset 0 0 0 0.1rem var(--element10);
+.signup, .cta {
+    color: var(--text10);
+    box-shadow: inset 0 0 0 0.125rem var(--element10);
+    /* if any of this works it will be a miracle */
+    &:hover {
+        box-shadow: inset 0 0 0 0.125rem var(--element10), 0px 0px 5px 0px rgba(0,0,0,0.75);
+        color: var(--revtext60);
+        &::before {
+            translate: 0;
+        }
+    }
+    &::before {
+        z-index: -1;
+        content: '';
+        background-color: var(--element10);
+        position: absolute;
+        height: 100%;
+        width: 100%;
+        top:0;
+        left:0;
+        translate: -100%;
+        transition: all 0.3s;
+    }
 }
