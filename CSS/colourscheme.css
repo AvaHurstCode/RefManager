@@ -1,7 +1,7 @@
 :root {
     --hue: 210;
-    --sat: 100%;
-    --light: 40%;
+    --sat: 80%;
+    --light: 30%;
     /* add 180 to the hue to give complimentary hue */
     --chue: calc(180 + var(--hue));
     /* full brightness and saturation primary and complimentary primary colours */
