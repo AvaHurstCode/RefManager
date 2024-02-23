@@ -4,7 +4,7 @@ Exclusively for styling the navigation bar
 nav {
     position: sticky;
     top: 0;
-    background-color: var(--primary15);
+    background-color: var(--element30);
     animation: navbar-lower 1s forwards;
     .nav-container {
         display: flex;
@@ -19,7 +19,7 @@ nav {
             display: flex;
             width: 90%;
             a {
-                color: var(--accent);
+                color: var(--text60);
                 display: block;
                 padding: 1.5rem;
             }
@@ -29,13 +29,13 @@ nav {
             font-size: 2rem;
             font-weight: 700;
             a {
-                color: var(--accent);
+                color: var(--text10);
             }
         }
         .nav-login {
             padding: 1rem 0rem 1rem 1rem;
             a {
-                color: var(--accent);
+                color: var(--text10);
             }
         }
     }

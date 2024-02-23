@@ -1,26 +1,25 @@
 :root {
-    --hue: 210;
-    --sat: 80%;
-    --light: 30%;
-    /* add 180 to the hue to give complimentary hue */
-    --chue: calc(180 + var(--hue));
-    /* full brightness and saturation primary and complimentary primary colours */
-    --primary: hsl(var(--hue), var(--sat), var(--light));
-    --complimentary: hsl(var(--chue), var(--sat), var(--light));
-    /* darker shades of same hues */
-    --primary75: hsl(var(--hue), var(--sat), calc(var(--light)*0.75));
-    --primary50: hsl(var(--hue), var(--sat), calc(var(--light)*0.50));
-    --primary25: hsl(var(--hue), var(--sat), calc(var(--light)*0.25));
-    --primary15: hsl(var(--hue), var(--sat), calc(var(--light)*0.15));
-    --primary7: hsl(var(--hue), var(--sat), calc(var(--light)*0.07));
-    --primary3: hsl(var(--hue), var(--sat), calc(var(--light)*0.03));
-    --complimentary75: hsl(var(--chue), var(--sat), calc(var(--light)*0.75));
-    --complimentary50: hsl(var(--chue), var(--sat), calc(var(--light)*0.50));
-    --complimentary25: hsl(var(--chue), var(--sat), calc(var(--light)*0.25));
-    --complimentary15: hsl(var(--chue), var(--sat), calc(var(--light)*0.15));
-    --complimentary7: hsl(var(--chue), var(--sat), calc(var(--light)*0.07));
-    --complimentary3: hsl(var(--chue), var(--sat), calc(var(--light)*0.03));
-    /* above is probably all stupid but I wanted to have it anyway incase it becomes useful later on */
-    /* and now for some actually more useful stuff */
-    --accent: #f7f7f7;
+    /* 60 */
+    --hue60: 210;
+    --sat60: 70%;
+    --light60: 10%;
+    /* 30 */
+    --hue30: 210;
+    --sat30: 70%;
+    --light30: 3%;
+    /* 10 */
+    --hue10: calc(60 + var(--hue60));
+    --sat10: 40%;
+    --light10: 10%;
+    /* Element Colours */
+        --element60: hsl(var(--hue60), var(--sat60), var(--light60));
+        --element30: hsl(var(--hue30), var(--sat30), var(--light30));
+        --element10: hsl(var(--hue10), var(--sat10), 50%);
+    /* Text Colours */
+        --text60: hsl(0, 0%, 70%);
+        --text30: hsl(0, 0%, 100%);
+        --text10: hsl(var(--hue10), var(--sat10), 50%);
+        --revtext60: hsl(0, 0%, 10%);
+        --revtext30: hsl(0, 0%, 20%);
+        --revtext10: hsl(0, 0%, 0%);
 }
