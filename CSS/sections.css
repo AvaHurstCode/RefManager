@@ -11,10 +11,12 @@ Key concepts to stick to:
 
 /* Section Defaults */
 .section {
-    color: black;
+    color: var(--primary15);
 }
 /* Hero */
 .hero {
+    color: var(--accent);
+    background-color: var(--primary);
     font-weight: 600;
     display: flex;
     flex-direction: column;
@@ -31,12 +33,12 @@ Key concepts to stick to:
 }
 /* Card List */
 .card-list {
-    color: white;
+    color: var(--accent);
     display: flex;
     justify-content: center;
     align-items: center;
     flex-direction: column;
-    background-color: black;
+    background-color: var(--primary25);
     header {
         padding: 1rem 1rem 0.2rem 1rem;
     }
@@ -52,7 +54,7 @@ Key concepts to stick to:
 }
 /* Individual Card */
 .card {
-    background-color: rgb(51, 51, 51);
+    background-color: var(--primary);
     border-radius: 1rem;
     padding: 2rem;
     width: 28%;

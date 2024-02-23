@@ -1,0 +1,26 @@
+:root {
+    --hue: 210;
+    --sat: 100%;
+    --light: 40%;
+    /* add 180 to the hue to give complimentary hue */
+    --chue: calc(180 + var(--hue));
+    /* full brightness and saturation primary and complimentary primary colours */
+    --primary: hsl(var(--hue), var(--sat), var(--light));
+    --complimentary: hsl(var(--chue), var(--sat), var(--light));
+    /* darker shades of same hues */
+    --primary75: hsl(var(--hue), var(--sat), calc(var(--light)*0.75));
+    --primary50: hsl(var(--hue), var(--sat), calc(var(--light)*0.50));
+    --primary25: hsl(var(--hue), var(--sat), calc(var(--light)*0.25));
+    --primary15: hsl(var(--hue), var(--sat), calc(var(--light)*0.15));
+    --primary7: hsl(var(--hue), var(--sat), calc(var(--light)*0.07));
+    --primary3: hsl(var(--hue), var(--sat), calc(var(--light)*0.03));
+    --complimentary75: hsl(var(--chue), var(--sat), calc(var(--light)*0.75));
+    --complimentary50: hsl(var(--chue), var(--sat), calc(var(--light)*0.50));
+    --complimentary25: hsl(var(--chue), var(--sat), calc(var(--light)*0.25));
+    --complimentary15: hsl(var(--chue), var(--sat), calc(var(--light)*0.15));
+    --complimentary7: hsl(var(--chue), var(--sat), calc(var(--light)*0.07));
+    --complimentary3: hsl(var(--chue), var(--sat), calc(var(--light)*0.03));
+    /* above is probably all stupid but I wanted to have it anyway incase it becomes useful later on */
+    /* and now for some actually more useful stuff */
+    --accent: #f7f7f7;
+}

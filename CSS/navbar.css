@@ -6,7 +6,7 @@ nav {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    background-color: black;
+    background-color: var(--primary15);
     position: sticky;
     top: 0;
     font-size: 1.5rem;
@@ -19,9 +19,11 @@ nav {
     }
     aside {
         padding: 1rem 3rem;
+        font-size: 2rem;
+        font-weight: 700;
     }
     a {
-        color: white;
+        color: var(--accent);
         text-decoration: none;
         display: block;
         width: 100%;
