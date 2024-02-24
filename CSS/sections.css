@@ -109,8 +109,10 @@ Key concepts to stick to:
 @media (max-width:1000px) {
     .hero {
         .hero-container {
-            h1 {
-                font-size: 5.5rem;
+            .text-container {
+                h1 {
+                    font-size: 5.5rem;
+                }
             }
         }
     }
