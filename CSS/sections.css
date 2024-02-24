@@ -71,7 +71,11 @@ Key concepts to stick to:
         header {
             color: var(--text30);
             font-weight: 700;
-            padding: 1rem 1rem 0.2rem 1rem;
+            padding: 1rem 1rem 0rem 1rem;
+            text-align: center;
+            h2 {
+                padding-bottom: 1rem;
+            }
         }
         main {
             width: 100%;
