@@ -22,10 +22,10 @@ Key concepts to stick to:
         flex-direction: column;
         align-items: center;
         justify-content: space-evenly;
-        height: max(65svh, 25rem);
         margin-left: auto;
         margin-right: auto;
         width: 72rem;
+        height: max(65svh, 25rem);
         max-width: 90%;
         animation: modify-hero linear both;
         animation-timeline: view(0% 93%);
@@ -146,10 +146,7 @@ Key concepts to stick to:
 }
 
 @keyframes modify-hero {
-    80% {
-        opacity: 0;
-    }
     to {
-        opacity: 0;
+        /* Animation Removed - Unnecesary */
     }
 }
