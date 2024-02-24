@@ -24,6 +24,18 @@ nav {
                 color: var(--text60);
                 display: block;
                 padding: 1.5rem;
+                transition: all 0.25s;
+            }
+            .active {
+                a{
+                    color: var(--text30);
+                }
+                box-shadow: inset 0px -0.25rem 0px var(--element10);
+            }
+            li:hover {
+                a {
+                    color: var(--text30);
+                }
             }
         }
         .nav-icon {
@@ -35,7 +47,7 @@ nav {
             }
         }
         .nav-login {
-            padding: 1rem 0rem 1rem 1rem;
+            padding: 0rem 0rem 0rem 1rem;
             a {
                 color: var(--text10);
             }

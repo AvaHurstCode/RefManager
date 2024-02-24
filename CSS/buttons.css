@@ -29,10 +29,13 @@ button {
 }
 
 .login {
-    background-color: var(--element10);
-    color: var(--revtext60);
+    background-color: transparent;
+    color: var(--text10);
+    font-size: 1.5rem;
+    padding: 0.7rem 1.5rem;
     &:hover {
-        background-color: var(--text30);
+        background-color: var(--element10);
+        color: var(--revtext60);
     }
 }
 
