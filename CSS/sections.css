@@ -12,6 +12,15 @@ Key concepts to stick to:
 /* Section Defaults */
 .section {
     color: var(--text60);
+    header {
+        color: var(--text30);
+        font-weight: 700;
+        padding: 1rem 1rem 0rem 1rem;
+        text-align: center;
+        h2 {
+            padding-bottom: 1rem;
+        }
+    }
 }
 /* Hero */
 .hero {
@@ -54,6 +63,51 @@ Key concepts to stick to:
         }
     }
 }
+/* Text */
+.text {
+    .text-container {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        margin-left: auto;
+        margin-right: auto;
+        width: 72rem;
+        max-width: 90%;
+        padding: 2rem;
+        text-align: center;
+        text-wrap: balance;
+        color: var(--text60);
+        animation: fade-in 1s ease both;
+        animation-timeline: view(70% 10%);
+        header {
+            font-weight: 700;
+            padding: 0rem 0rem 1rem 0rem;
+            h2 {
+                padding-bottom: 1rem;
+                color: var(--text30);
+                animation: fade-in 1s ease both;
+                animation-timeline: view(70% 10%);
+            }
+            h3 {
+                color: var(--text60);
+                animation: fade-in 1s ease both;
+                animation-timeline: view(70% 10%);
+            }
+        }
+        .img-container {
+            padding: 1rem 1rem 2rem 1rem;
+            animation: fade-in 1s ease both;
+            animation-timeline: view(70% 10%);
+            width: 70%;
+            img {
+                border-radius: 2rem;
+                background-size: contain;
+                height: 100%;
+            }
+        }
+    }
+}
 /* Card List */
 .card-list {
     background-color: transparent;
@@ -75,6 +129,9 @@ Key concepts to stick to:
             text-align: center;
             h2 {
                 padding-bottom: 1rem;
+            }
+            h3 {
+                color: var(--text60);
             }
         }
         main {
@@ -118,6 +175,13 @@ Key concepts to stick to:
                 h1 {
                     font-size: 5.5rem;
                 }
+            }
+        }
+    }
+    .text {
+        .text-container {
+            .img-container {
+                width: 90%;
             }
         }
     }

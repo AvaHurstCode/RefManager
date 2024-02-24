@@ -34,3 +34,12 @@ h2 {
 h1 {
     font-size: 6rem;
 }
+
+img {
+    max-width: 100%;
+    height: auto;
+    vertical-align: middle;
+    font-style: italic;
+    background-repeat: no-repeat;
+    shape-margin: 1rem;
+}
