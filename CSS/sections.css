@@ -22,11 +22,13 @@ Key concepts to stick to:
         flex-direction: column;
         align-items: center;
         justify-content: space-evenly;
-        height: max(65svh, 20rem);
+        height: max(65svh, 25rem);
         margin-left: auto;
         margin-right: auto;
         width: 72rem;
         max-width: 90%;
+        animation: modify-hero linear both;
+        animation-timeline: view(0% 93%);
         h1 {
             color: var(--text30);
             font-weight: 700;
@@ -140,5 +142,14 @@ Key concepts to stick to:
     }
     to {
         translate: 0 0;
+    }
+}
+
+@keyframes modify-hero {
+    80% {
+        opacity: 0;
+    }
+    to {
+        opacity: 0;
     }
 }
