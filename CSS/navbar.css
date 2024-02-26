@@ -55,11 +55,33 @@ nav {
     }
 }
 
-@media (max-width: 1000px) {
+@media screen and (max-width: 1000px) {
     nav {
         .nav-container {
             ul {
                 width: unset;
+            }
+        }
+    }
+}
+
+@media screen and (max-width: 600px) {
+    nav {
+        position: static;
+        .nav-container {
+            flex-direction: column;
+            .nav-icon {
+                padding: 1rem 0rem 1rem 0rem;
+            }
+            .nav-login {
+                padding: 1rem 0rem 1rem 0rem;
+            }
+            ul {
+                flex-direction: column;
+                align-items: center;
+                li {
+                    
+                }
             }
         }
     }
