@@ -207,10 +207,15 @@ Key concepts to stick to:
                     padding: 0.5rem;
                     font-size: 1.5rem;
                     border-radius: 1rem;
+                    border-style: none;
                 }
             }
             a {
                 padding: 2rem;
+                color: var(--text10);
+                button {
+                    z-index: 1;
+                }
             }
             p {
                 text-align: center;
