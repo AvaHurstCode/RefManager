@@ -79,8 +79,11 @@ nav {
             ul {
                 flex-direction: column;
                 align-items: center;
-                li {
-                    
+                justify-content: center;
+                width: 100%;
+                li, a {
+                    text-align: center;
+                    width: 90%;
                 }
             }
         }

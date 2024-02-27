@@ -7,7 +7,7 @@ header {
 .tools-pannel {
     position: relative;
     width: 15rem;
-    height: calc(100vh - 4.55rem);
+    height: calc(100vh - 10.55rem);
     display: flex;
     align-items: center;
     .checkbox-container {
