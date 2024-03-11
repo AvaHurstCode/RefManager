@@ -3,13 +3,22 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/css/reset.css">
+    <link rel="stylesheet" href="/css/defaults.css">
+    <link rel="stylesheet" href="/css/colourscheme">
+    <link rel="stylesheet" href="/css/sections.css">
     <title>Projects</title>
 </head>
 <body>
-    <ul>
-        <% for (let i = 0; i < listLength; i++) { %>
-            <li> Project <%= i + 1 %> </li>
-        <% } %>
-    </ul>
+    <section class="project-list">
+        <ul>
+            <% for (let i = 0; i < listLength; i++) { %>
+                <li>
+                    <div class="image-container"></div>
+                    Project <%= i + 1 %>
+                </li>
+            <% } %>
+        </ul>
+    </section>
 </body>
 </html>

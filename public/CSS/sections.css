@@ -234,6 +234,16 @@ Key concepts to stick to:
         padding: 3rem;
     }
 }
+/* Project List */
+.project-list {
+    ul {
+        display: flex;
+        li {
+            background-color: var(--element30);
+        }
+    }
+}
+
 /* Footer */
 body > footer {
     display: flex;
