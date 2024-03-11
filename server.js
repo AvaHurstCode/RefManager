@@ -9,8 +9,8 @@ app.get('/user/:userId/projects', (req, res) => {
     res.render("projects", {listLength: req.params.userId})
 })
 
-app.get('*', (req, res) => {
-    res.sendStatus(404)
+app.get('/:slug/*', (req, res) => {
+    res.status(404).send(`Error 404 ${req.params.slug} not found`)
 })
 
 app.listen(4000)
