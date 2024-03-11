@@ -10,7 +10,7 @@ app.get('/user/:userId/projects', (req, res) => {
 })
 
 app.get('/user/:userId/editor/project/:projectName', (req, res) => {
-    res.render("editor", {projectName : req.params.projectName})
+    res.render("editor", {projectName : req.params.projectName, userId : req.params.userId})
 })
 
 app.get('/:slug/*', (req, res) => {
