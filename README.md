@@ -1,3 +1,15 @@
+Notes for Handin:
+start with `npm run devStart`
+Routes:
+
+- /home -> redirects to static index.html
+- /user/[any]/editor/project/[any] -> displays editor page with project name from url
+- /user/[integer]/projects -> displays a list of numbered projects, the list length being equal to the integer entered (just for testing)
+- /[any] -> error 404
+- /[any]/[any] - error 404
+
+# Description
+
 A referecing tool web-app that allows users to create and manage image references for their artworks and other creative processes.
 
 Future features:
