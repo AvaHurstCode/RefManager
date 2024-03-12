@@ -6,7 +6,7 @@ app.set("view engine", "ejs")
 app.use(express.static("public"))
 
 app.get('/home', (req, res) => {
-    res.redirect('')
+    res.redirect('/index.html')
 })
 
 app.get('/user/:userId/projects', (req, res) => {
