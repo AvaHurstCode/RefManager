@@ -1,6 +1,8 @@
-Notes for Handin:
-start with `npm run devStart`
-Routes:
+# Notes for Handin:
+
+## start with `npm run devStart`
+
+### Routes:
 
 - /home -> redirects to static index.html
 - /user/[any]/editor/project/[any] -> displays editor page with project name from url
