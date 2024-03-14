@@ -1,7 +1,7 @@
 .editor-body {
     display: grid;
     height: 100svh;
-    grid-template-columns: 3rem 1fr;
+    grid-template-columns: 7rem 1fr;
     grid-template-rows: 5rem 1fr 2rem;
     grid-template-areas: 
         "nav nav"
@@ -10,22 +10,47 @@
     ;
     nav {
         grid-area: nav;
+        background-color: var(--element30);
         ul {
             display: flex;
+            height: 100%;
             justify-content: center;
+            align-items: center;
             gap: 2%;
         }
-        background-color: black;
     }
-    .main{
-        aside {
-            grid-area: aside;
+    aside {
+        grid-area: aside;
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        padding: 10%;
+        background-color: var(--element30);
+        label {
+            display: flex;
         }
-        div {
-            grid-area: main;
+    }
+    main {
+        grid-area: main;
+        ul {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 3rem;
+            padding: 3rem;
+            li {
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                .img {
+                    width: 10rem;
+                    height: 10rem;
+                    background-color: var(--element30);
+                }
+            }
         }
-        footer {
-            grid-area: footer;
-        }
+    }
+    footer {
+        grid-area: footer;
+        background-color: var(--element30);
     }
 }
