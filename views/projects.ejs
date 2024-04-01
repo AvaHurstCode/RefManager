@@ -12,10 +12,10 @@
 <body>
     <section class="project-list">
         <ul>
-            <% for (let i = 0; i < listLength; i++) { %>
+            <% for (const x of projects) { %>
                 <li>
                     <div class="image-container"></div>
-                    <p>Project <%= i + 1 %></p>
+                    <p><%=x.author%> <%= x.dateCreated %></p>
                 </li>
             <% } %>
         </ul>

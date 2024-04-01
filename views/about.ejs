@@ -1,17 +1,4 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="css/reset.css">
-    <link rel="stylesheet" href="css/defaults.css">
-    <link rel="stylesheet" href="css/colourscheme.css">
-    <link rel="stylesheet" href="css/background.css">
-    <link rel="stylesheet" href="css/buttons.css">
-    <link rel="stylesheet" href="css/sections.css">
-    <link rel="stylesheet" href="css/navbar.css">
-    <title>Home</title>
-</head>
+<%= includes('includes/head') %>
 <body>
     <!-- Background Animation -->
     <div class="background-anim">
@@ -21,30 +8,7 @@
         <div class="blur"></div>
     </div>
     <!-- Navigation Bar -->
-    <nav>
-        <div class="nav-container">
-            <aside class="nav-icon">
-                <a href="index.html">
-                    RM
-                </a>
-            </aside>
-            <ul>
-                <li>
-                    <a href="index.html">HOME</a>
-                </li>
-                <li class="active">
-                    <a href="about.html">ABOUT</a>
-                </li>
-            </ul>
-            <aside class="nav-login">
-                <a href="login.html">
-                    <button class="login">
-                        LOGIN
-                    </button>
-                </a>
-            </aside>
-        </div>
-    </nav>
+    <%= includes('includes/nav', {active: "about"}) %>
     <!-- Main Content -->
     <main>
         <section class="hero">
@@ -70,25 +34,25 @@
                 <main>
                     <ul>
                         <li class="card">
-                            <h3>
+                            <h4>
                                 Unorganised
-                            </h3>
+                            </h4>
                             <p>
                                 Lorem ipsum dolor sit amet consectetur adipisicing elit. Rerum voluptatum explicabo ipsum porro a alias debitis voluptate animi minus dolores hic, maiores id autem laboriosam temporibus nulla deserunt nihil! Modi!
                             </p>
                         </li>
                         <li class="card">
-                            <h3>
+                            <h4>
                                 Overcomplicated
-                            </h3>
+                            </h4>
                             <p>
                                 Lorem ipsum dolor sit amet, consectetur adipisicing elit. In odit vero commodi culpa voluptas quia corporis distinctio. Optio, modi repudiandae? Id nemo dignissimos quasi placeat quas vel. Porro, id quaerat.
                             </p>
                         </li>
                         <li class="card">
-                            <h3>
+                            <h4>
                                 Unfriendly
-                            </h3>
+                            </h4>
                             <p>
                                 Lorem ipsum dolor sit amet consectetur adipisicing elit. Id molestias aut quasi? Perferendis enim cum perspiciatis expedita obcaecati optio laboriosam a, illum quis laborum ratione ducimus autem sint adipisci impedit?
                             </p>
