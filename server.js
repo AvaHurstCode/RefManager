@@ -1,7 +1,20 @@
-const express = require('express')
-const { connectToDb, getDb } = require('./db')
-const { ObjectId } = require('mongodb')
-const app = express()
+const express = require('express');
+const { connectToDb, getDb } = require('./db');
+const { ObjectId } = require('mongodb');
+const mongoose = require('mongoose');
+
+// Define the project schema using Mongoose
+const projectSchema = new mongoose.Schema({
+  author: { type: String, required: true },
+  dateCreated: { type: String, required: true },
+  lastModified: { type: String, required: true },
+  projectName: { type: String, required: true }
+});
+
+// Create a Mongoose model from the schema
+const Project = mongoose.model('Project', projectSchema);
+
+const app = express();
 
 //db connection
 let db
@@ -72,56 +85,55 @@ app.get('/editProject/:id', (req, res) => {
 })
 
 app.post('/editProject/:id', (req, res) => {
-    let id = new ObjectId(req.params.id)
-    let updated = {
-        projectName: req.body.title,
-        author: req.body.author,
-        lastModified: date.toDaeString()
-    }
-    console.log(updated)
-    db.collection('projects')
-    .updateOne({_id: id}, {$set: updated})
-    .then(result => {
-        res.status(200).json(result)
-    })
-    .catch(err => {
-        res.status(500).json({err: 'Could not update the project'})
-    })
-})
-
-app.post('/newProject', (req, res) => {
-    console.log(req.body)
-    const date = new Date()
-    console.log(date)
-    const project = {
-            author: req.body.author,
-            dateCreated: date.toDateString(),
-            lastModified: date.toDateString(),
-            projectName: req.body.title
-        }
-
-    db.collection('projects')
-    .insertOne(project)
-    .then(result => {
-        res.status(201).json(result)
-    })
-    .catch(err => {
-        res.status(500).json({err: 'Could not create project'})
-    })
-})
-
-app.post('/delProject', (req, res) => {
-    let id = new ObjectId(req.body.projectId)
-    db.collection('projects')
-    .deleteOne({_id: id})
-    .then(result => {
-        res.status(200).json({result})
-        console.log("deleted project" + req.body.projectId)
-    })
-    .catch(err => {
-        res.status(500).json({err: 'Could not delete the document'})
-    })
-})
+    const id = req.params.id;
+    const updated = {
+      projectName: req.body.title,
+      author: req.body.author,
+      lastModified: new Date().toDateString()
+    };
+  
+    Project.findByIdAndUpdate(id, updated, { new: true })
+      .then(result => {
+        res.status(200).json(result);
+      })
+      .catch(err => {
+        res.status(500).json({ err: 'Could not update the project' });
+      });
+  });
+  
+  // POST route to create a new project
+  app.post('/newProject', (req, res) => {
+    const date = new Date();
+    
+    const project = new Project({
+      author: req.body.author,
+      dateCreated: date.toDateString(),
+      lastModified: date.toDateString(),
+      projectName: req.body.projectName
+    });
+    
+    project.save()
+      .then(result => {
+        res.status(201).json(result);
+      })
+      .catch(err => {
+        res.status(500).json({ err: 'Could not create project' });
+      });
+  });
+  
+  // POST route to delete a project
+  app.post('/delProject', (req, res) => {
+    const id = req.body.projectId;
+    
+    Project.findByIdAndDelete(id)
+      .then(result => {
+        res.status(200).json(result);
+        console.log("Deleted project: " + id);
+      })
+      .catch(err => {
+        res.status(500).json({ err: 'Could not delete the project' });
+      });
+  });
 
 app.get(['/:slug', '/:slug/*'], (req, res) => {
     res.status(404).send(`Error 404 ${req.params.slug} not found`)
