@@ -1,6 +1,6 @@
 # Notes for Hand-in:
 
-### Install dependencies `through npm install`
+### Install dependencies through `npm install`
 
 ### Start with `npm run devStart`
 
