@@ -3,15 +3,13 @@ const { connectToDb, getDb } = require('./db');
 const { ObjectId } = require('mongodb');
 const mongoose = require('mongoose');
 
-// Define the project schema using Mongoose
 const projectSchema = new mongoose.Schema({
-  author: { type: String, required: true },
-  dateCreated: { type: String, required: true },
-  lastModified: { type: String, required: true },
-  projectName: { type: String, required: true }
+    author: { type: String, required: true },
+    dateCreated: { type: String, required: true },
+    lastModified: { type: String, required: true },
+    projectName: { type: String, required: true }
 });
 
-// Create a Mongoose model from the schema
 const Project = mongoose.model('Project', projectSchema);
 
 const app = express();
@@ -87,38 +85,38 @@ app.get('/editProject/:id', (req, res) => {
 app.post('/editProject/:id', (req, res) => {
     const id = req.params.id;
     const updated = {
-      projectName: req.body.title,
-      author: req.body.author,
-      lastModified: new Date().toDateString()
+        projectName: req.body.title,
+        author: req.body.author,
+        lastModified: new Date().toDateString()
     };
 
     Project.findByIdAndUpdate(id, updated, { new: true })
-      .then(result => {
+    .then(result => {
         res.status(200).json(result);
-      })
-      .catch(err => {
+    })
+    .catch(err => {
         res.status(500).json({ err: 'Could not update the project' });
-      });
+    });
 });
   
 app.post('/newProject', (req, res) => {
-  const date = new Date();
-  
-  const project = new Project({
-    author: req.body.author,
-    dateCreated: date.toDateString(),
-    lastModified: date.toDateString(),
-    projectName: req.body.title
-  });
-  
-  project.save()
+    const date = new Date();
+    
+    const project = new Project({
+        author: req.body.author,
+        dateCreated: date.toDateString(),
+        lastModified: date.toDateString(),
+        projectName: req.body.title
+    });
+    
+    project.save()
     .then(result => {
-      console.log("New project created:", result);
-      res.status(200).json(result);
+        console.log("New project created:", result);
+        res.status(200).json(result);
     })
     .catch(err => {
-      console.error("Error creating project:", err);
-      res.status(500).json({ err: 'Could not create project' });
+        console.error("Error creating project:", err);
+        res.status(500).json({ err: 'Could not create project' });
     });
 });
   
@@ -127,13 +125,13 @@ app.post('/delProject', (req, res) => {
     const id = req.body.projectId;
     
     Project.findByIdAndDelete(id)
-      .then(result => {
+    .then(result => {
         res.status(200).json(result);
         console.log("Deleted project: " + id);
-      })
-      .catch(err => {
+    })
+    .catch(err => {
         res.status(500).json({ err: 'Could not delete the project' });
-      });
+    });
 });
 
 app.get(['/:slug', '/:slug/*'], (req, res) => {
