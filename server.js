@@ -91,7 +91,7 @@ app.post('/editProject/:id', (req, res) => {
       author: req.body.author,
       lastModified: new Date().toDateString()
     };
-  
+
     Project.findByIdAndUpdate(id, updated, { new: true })
       .then(result => {
         res.status(200).json(result);
@@ -99,30 +99,31 @@ app.post('/editProject/:id', (req, res) => {
       .catch(err => {
         res.status(500).json({ err: 'Could not update the project' });
       });
+});
+  
+app.post('/newProject', (req, res) => {
+  const date = new Date();
+  
+  const project = new Project({
+    author: req.body.author,
+    dateCreated: date.toDateString(),
+    lastModified: date.toDateString(),
+    projectName: req.body.title
   });
   
-  // POST route to create a new project
-  app.post('/newProject', (req, res) => {
-    const date = new Date();
-    
-    const project = new Project({
-      author: req.body.author,
-      dateCreated: date.toDateString(),
-      lastModified: date.toDateString(),
-      projectName: req.body.projectName
+  project.save()
+    .then(result => {
+      console.log("New project created:", result);
+      res.status(200).json(result);
+    })
+    .catch(err => {
+      console.error("Error creating project:", err);
+      res.status(500).json({ err: 'Could not create project' });
     });
-    
-    project.save()
-      .then(result => {
-        res.status(201).json(result);
-      })
-      .catch(err => {
-        res.status(500).json({ err: 'Could not create project' });
-      });
-  });
+});
   
-  // POST route to delete a project
-  app.post('/delProject', (req, res) => {
+// POST route to delete a project
+app.post('/delProject', (req, res) => {
     const id = req.body.projectId;
     
     Project.findByIdAndDelete(id)
@@ -133,7 +134,7 @@ app.post('/editProject/:id', (req, res) => {
       .catch(err => {
         res.status(500).json({ err: 'Could not delete the project' });
       });
-  });
+});
 
 app.get(['/:slug', '/:slug/*'], (req, res) => {
     res.status(404).send(`Error 404 ${req.params.slug} not found`)
