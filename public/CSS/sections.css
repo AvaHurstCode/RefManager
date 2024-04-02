@@ -211,10 +211,10 @@ Key concepts to stick to:
                 }
             }
             a {
-                padding: 2rem;
-                color: var(--text10);
                 button {
                     z-index: 1;
+                    padding: 2rem;
+                    color: var(--text10);
                 }
             }
             p {

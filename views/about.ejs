@@ -1,4 +1,4 @@
-<%= includes('includes/head') %>
+<%- include('includes/head', {title: "About"}) %>
 <body>
     <!-- Background Animation -->
     <div class="background-anim">
@@ -8,7 +8,7 @@
         <div class="blur"></div>
     </div>
     <!-- Navigation Bar -->
-    <%= includes('includes/nav', {active: "about"}) %>
+    <%- include('includes/nav', {active: "about"}) %>
     <!-- Main Content -->
     <main>
         <section class="hero">

@@ -1,17 +1,4 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="css/reset.css">
-    <link rel="stylesheet" href="css/defaults.css">
-    <link rel="stylesheet" href="css/colourscheme.css">
-    <link rel="stylesheet" href="css/background.css">
-    <link rel="stylesheet" href="css/buttons.css">
-    <link rel="stylesheet" href="css/sections.css">
-    <link rel="stylesheet" href="css/navbar.css">
-    <title>Home</title>
-</head>
+<%- include('includes/head', {title: "Home"}) %>
 <body>
     <!-- Background Animation -->
     <div class="background-anim">
@@ -21,30 +8,7 @@
         <div class="blur"></div>
     </div>
     <!-- Navigation Bar -->
-    <nav>
-        <div class="nav-container">
-            <aside class="nav-icon">
-                <a href="index.ejs">
-                    RM
-                </a>
-            </aside>
-            <ul>
-                <li class="active">
-                    <a href="index.ejs">HOME</a>
-                </li>
-                <li>
-                    <a href="about.ejs">ABOUT</a>
-                </li>
-            </ul>
-            <aside class="nav-login">
-                <a href="login.ejs">
-                    <button class="login">
-                        LOGIN
-                    </button>
-                </a>
-            </aside>
-        </div>
-    </nav>
+    <%- include('includes/nav', {active: "about"}) %>
     <!-- Main Content -->
     <main>
         <section class="hero">
@@ -60,7 +24,7 @@
                     </h2>
                 </div>
                 <div class="button-container">
-                    <a href="editor.ejs">
+                    <a href="/editor">
                         <button class="cta">
                             USE NOW
                         </button>

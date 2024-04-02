@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/reset.css">
+    <link rel="stylesheet" href="css/defaults.css">
+    <link rel="stylesheet" href="css/colourscheme.css">
+    <link rel="stylesheet" href="css/background.css">
+    <link rel="stylesheet" href="css/buttons.css">
+    <link rel="stylesheet" href="css/sections.css">
+    <link rel="stylesheet" href="css/navbar.css">
+    <title>New Project</title>
+</head>
+<body>
+    <!-- Background Animation -->
+    <div class="background-anim">
+        <div class="dot" id="dot1"></div>
+        <div class="dot" id="dot2"></div>
+        <div class="dot" id="dot3"></div>
+        <div class="blur"></div>
+    </div>
+    <!-- Navigation Bar -->
+    <nav>
+        <div class="nav-container">
+            <aside class="nav-icon">
+                <a href="index.ejs">
+                    RM
+                </a>
+            </aside>
+            <ul>
+                <li>
+                    <a href="index.ejs">HOME</a>
+                </li>
+                <li>
+                    <a href="about.ejs">ABOUT</a>
+                </li>
+            </ul>
+            <aside class="nav-login">
+                <a href="signup.ejs">
+                    <button class="login">
+                        LOGIN
+                    </button>
+                </a>
+            </aside>
+        </div>
+    </nav>
+    <!-- Main Content -->
+    <main>
+        <section class="forms">
+            <main>
+                <div class="login-form-container">
+                    <header>
+                        <h1 class="login-header">
+                            New Project
+                        </h1>
+                    </header>
+                    <form action="/newProject" method="post" required>
+                        <label for="title">Project Name</label>
+                        <input type="text" name="title" id="title" required>
+                        <label for="author">author</label>
+                        <input type="text" name="author" id="author" required>
+                        <button class="cta">SUBMIT</button>
+                    </form>
+                    <p>
+                        Don't have an account?</br>
+                        <a href="signup.ejs">Sign up!</a>
+                    </p>
+                </div>
+            </main>
+        </section>
+    </main>
+</body>
+</html>
