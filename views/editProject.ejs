@@ -3,13 +3,13 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="css/reset.css">
-    <link rel="stylesheet" href="css/defaults.css">
-    <link rel="stylesheet" href="css/colourscheme.css">
-    <link rel="stylesheet" href="css/background.css">
-    <link rel="stylesheet" href="css/buttons.css">
-    <link rel="stylesheet" href="css/sections.css">
-    <link rel="stylesheet" href="css/navbar.css">
+    <link rel="stylesheet" href="/css/reset.css">
+    <link rel="stylesheet" href="/css/defaults.css">
+    <link rel="stylesheet" href="/css/colourscheme.css">
+    <link rel="stylesheet" href="/css/background.css">
+    <link rel="stylesheet" href="/css/buttons.css">
+    <link rel="stylesheet" href="/css/sections.css">
+    <link rel="stylesheet" href="/css/navbar.css">
     <title>New Project</title>
 </head>
 <body>
@@ -52,15 +52,15 @@
                 <div class="login-form-container">
                     <header>
                         <h1 class="login-header">
-                            New Project
+                            Edit Project <%= project.projectName %>
                         </h1>
                     </header>
-                    <form action="/newProject" method="post" required>
+                    <form action="/editProject/<%=project._id.toString()%>" method="post" required>
                         <label for="title">Project Name</label>
                         <input type="text" name="title" id="title" required>
                         <label for="author">author</label>
                         <input type="text" name="author" id="author" required>
-                        <div class="button-container"><button class="cta">SUBMIT</button></div>
+                        <div class="button-container"><button class="cta">UPDATE PROJECT</button></div>
                     </form>
                 </div>
             </main>

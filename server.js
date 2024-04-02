@@ -1,6 +1,7 @@
 const express = require('express')
-const app = express()
 const { connectToDb, getDb } = require('./db')
+const { ObjectId } = require('mongodb')
+const app = express()
 
 //db connection
 let db
@@ -35,7 +36,7 @@ app.get('/editor', (req, res) => {
     res.render("editor")
 })
 
-app.get('/user/:userId/projects', (req, res) => {
+app.get('/projects', (req, res) => {
     let projects = []
 
     db.collection('projects')
@@ -58,16 +59,44 @@ app.get('/newProject', (req, res) => {
     res.render("newProject")
 })
 
-app.get(['/:slug', '/:slug/*'], (req, res) => {
-    res.status(404).send(`Error 404 ${req.params.slug} not found`)
+app.get('/editProject/:id', (req, res) => {
+    let id = new ObjectId(req.params.id)
+    db.collection('projects')
+    .findOne({_id: id})
+    .then(doc => {
+        res.render('editProject', {project: doc})
+    })
+    .catch(err => {
+        res.status(500).json({err: 'Could not fetch the project'})
+    })
+})
+
+app.post('/editProject/:id', (req, res) => {
+    let id = new ObjectId(req.params.id)
+    let updated = {
+        projectName: req.body.title,
+        author: req.body.author,
+        lastModified: date.toDaeString()
+    }
+    console.log(updated)
+    db.collection('projects')
+    .updateOne({_id: id}, {$set: updated})
+    .then(result => {
+        res.status(200).json(result)
+    })
+    .catch(err => {
+        res.status(500).json({err: 'Could not update the project'})
+    })
 })
 
 app.post('/newProject', (req, res) => {
     console.log(req.body)
+    const date = new Date()
+    console.log(date)
     const project = {
             author: req.body.author,
-            dateCreated: "01/04/2024",
-            lastModified: "01/04/2024 23:53",
+            dateCreated: date.toDateString(),
+            lastModified: date.toDateString(),
             projectName: req.body.title
         }
 
@@ -79,4 +108,21 @@ app.post('/newProject', (req, res) => {
     .catch(err => {
         res.status(500).json({err: 'Could not create project'})
     })
+})
+
+app.post('/delProject', (req, res) => {
+    let id = new ObjectId(req.body.projectId)
+    db.collection('projects')
+    .deleteOne({_id: id})
+    .then(result => {
+        res.status(200).json({result})
+        console.log("deleted project" + req.body.projectId)
+    })
+    .catch(err => {
+        res.status(500).json({err: 'Could not delete the document'})
+    })
+})
+
+app.get(['/:slug', '/:slug/*'], (req, res) => {
+    res.status(404).send(`Error 404 ${req.params.slug} not found`)
 })

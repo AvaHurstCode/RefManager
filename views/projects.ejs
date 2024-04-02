@@ -14,8 +14,12 @@
         <ul>
             <% for (const x of projects) { %>
                 <li>
-                    <div class="image-container"></div>
-                    <p><%=x.projectName%> </br> <%= x.dateCreated %></p>
+                    <form action="/delProject" method="post">
+                        <input type="text" name="projectId" value="<%= x._id.toString() %>">
+                        <button class="image-container"></button>
+                    </form>
+                    <p><%=x.projectName%> </br> <%= x.dateCreated %> </br> By: <%= x.author %></p>
+                    <a href="/editProject/<%=x._id.toString()%>"><button>Edit</button></a>
                 </li>
             <% } %>
         </ul>

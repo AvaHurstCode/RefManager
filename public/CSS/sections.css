@@ -195,8 +195,9 @@ Key concepts to stick to:
                 display: flex;
                 flex-direction: column;
                 align-items: center;
-                padding: 1rem;
+                padding: 0.5rem;
                 width: 80%;
+                gap: 0.5rem;
                 label {
                     padding: 1rem;
                     font-size: 2rem;
@@ -210,12 +211,13 @@ Key concepts to stick to:
                     border-style: none;
                 }
             }
-            a {
-                button {
-                    z-index: 1;
-                    padding: 2rem;
-                    color: var(--text10);
-                }
+            button {
+                z-index: 1;
+                padding: 2rem;
+                color: var(--text10);
+            }
+            .button-container{
+                padding-top: 3rem;
             }
             p {
                 text-align: center;
@@ -250,6 +252,9 @@ Key concepts to stick to:
             }
             p {
                 text-align: center;
+            }
+            input {
+                display: none;
             }
         }
     }
