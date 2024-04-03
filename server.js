@@ -1,16 +1,17 @@
-const express = require('express');
-const { connectToDb, getDb } = require('./db');
-const { ObjectId } = require('mongodb');
-const mongoose = require('mongoose');
+import express from 'express';
+import { connectToDb, getDb } from './db.js';
+import { ObjectId } from 'mongodb';
+import { Schema, model } from 'mongoose';
+import { logger } from './middlewares/logger.js';
 
-const projectSchema = new mongoose.Schema({
+const projectSchema = new Schema({
     author: { type: String, required: true },
     dateCreated: { type: String, required: true },
     lastModified: { type: String, required: true },
     projectName: { type: String, required: true }
 });
 
-const Project = mongoose.model('Project', projectSchema);
+const Project = model('Project', projectSchema);
 
 const app = express();
 
@@ -29,6 +30,7 @@ connectToDb((err) => {
 
 app.set("view engine", "ejs")
 
+app.use(logger)
 app.use(express.static("public"))
 app.use(express.urlencoded({ extended: true }))
 
