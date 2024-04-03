@@ -1,0 +1,30 @@
+:root {
+    /* 60 */
+    --hue60: 240;
+    --sat60: 70%;
+    --light60: 15%;
+    /* 30 */
+    --hue30: var(--hue60);
+    --sat30: var(--sat60);
+    --light30: 7%;
+    /* 10 */
+    --hue10: calc(var(--hue60) + 60);
+    --sat10: 35%;
+    --light10: 50%;
+    /* Element Colours */
+        --element60: hsl(var(--hue60), var(--sat60), var(--light60));
+        --element30: hsl(var(--hue30), var(--sat30), var(--light30));
+        --element10: hsl(var(--hue10), var(--sat10), var(--light10));
+    /* Text Colours */
+        --text60: hsl(0, 0%, 70%);
+        --text30: hsl(0, 0%, 100%);
+        --text10: hsl(var(--hue10), var(--sat10), 50%);
+        --revtext60: hsl(0, 0%, 10%);
+        --revtext30: hsl(0, 0%, 20%);
+        --revtext10: hsl(0, 0%, 0%);
+    /* Misc Colours */
+        --outline: var(--revtext30);
+    /* Scrollbar Colour */
+    scrollbar-color: var(--element30) var(--element60);
+    scrollbar-width: thin;
+}

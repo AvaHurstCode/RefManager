@@ -1,0 +1,351 @@
+/* 
+Sections are managed here!
+My definition of a section:
+ - A re-usable self-contained "section" of a website that can be stacked to form a layout
+
+Key concepts to stick to:
+ - Use relative units (%, rem)
+ - Use colours from colouscheme.css
+ - More TBD
+*/
+
+/* Section Defaults */
+.section {
+    color: var(--text60);
+    header {
+        color: var(--text30);
+        font-weight: 700;
+        padding: 1rem 1rem 0rem 1rem;
+        text-align: center;
+        h2 {
+            padding-bottom: 1rem;
+        }
+    }
+}
+/* Hero */
+.hero {
+    .hero-container {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: space-evenly;
+        height: max(65svh, 25rem);
+        padding-bottom: 3rem;
+        .text-container {
+            position: relative;
+            background-color: transparent;
+            font-weight: 600;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: space-evenly;
+            margin-left: auto;
+            margin-right: auto;
+            width: 72rem;
+            height: 100%;
+            max-width: 90%;
+            animation: modify-hero linear both;
+            animation-timeline: view(20% 80%);
+            h1 {
+                color: var(--text30);
+                font-weight: 700;
+                font-size: 10rem;
+                text-align: center;
+                animation: fall-from-above 1s forwards, fade-in 1s forwards;
+            }
+            h2 {
+                color: var(--text60);
+                font-size: 2rem;
+                text-align: center;
+                animation: rise-from-below 1s forwards, fade-in 1s forwards;
+                text-wrap: balance;
+            }
+        }
+    }
+}
+/* Text */
+.text {
+    .text-container {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        margin-left: auto;
+        margin-right: auto;
+        width: 72rem;
+        max-width: 90%;
+        padding: 2rem;
+        text-align: center;
+        text-wrap: balance;
+        color: var(--text60);
+        animation: fade-in 1s ease both;
+        animation-timeline: view(70% 10%);
+        header {
+            font-weight: 700;
+            padding: 0rem 0rem 1rem 0rem;
+            h2 {
+                padding-bottom: 1rem;
+                color: var(--text30);
+                animation: fade-in 1s ease both;
+                animation-timeline: view(70% 10%);
+            }
+            h3 {
+                color: var(--text60);
+                animation: fade-in 1s ease both;
+                animation-timeline: view(70% 10%);
+            }
+        }
+        .img-container {
+            padding: 1rem 1rem 2rem 1rem;
+            animation: fade-in 1s ease both;
+            animation-timeline: view(70% 10%);
+            width: 70%;
+            img {
+                border-radius: 2rem;
+                background-size: contain;
+                height: 100%;
+            }
+        }
+    }
+}
+/* Card List */
+.card-list {
+    background-color: transparent;
+    animation: fade-in 1s ease both;
+    animation-timeline: view(70% 10%);
+    .card-list-container {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        margin-left: auto;
+        margin-right: auto;
+        width: 72rem;
+        max-width: 90%;
+        header {
+            color: var(--text30);
+            font-weight: 700;
+            padding: 1rem 1rem 0rem 1rem;
+            text-align: center;
+            h2 {
+                padding-bottom: 1rem;
+            }
+            h3 {
+                color: var(--text60);
+            }
+        }
+        main {
+            width: 100%;
+            padding: 1.5rem;
+            ul {
+                display: flex;
+                justify-content: space-evenly;
+                gap: 1rem;
+            }
+        }
+    }
+}
+/* Individual Card */
+.card {
+    animation: rise-from-below 1s ease both, fade-in 1s ease both;
+    animation-timeline: view(80% 0%);
+    border: 1px solid var(--outline);
+    background-color: var(--element30);
+    border-radius: 1rem;
+    padding: 2rem;
+    width: 28%;
+    /* animation */
+    h3, h4, p {
+        padding: 1rem;
+        text-wrap: balance;
+    }
+    h3, h4 {
+        color: var(--text30);
+    }
+    p {
+        color: var(--text60);
+    }
+}
+/* Forms */
+.forms {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    margin-left: auto;
+    margin-right: auto;
+    padding-top: 2vh;
+    width: 72rem;
+    min-height: calc(100vh - 4.55rem);
+    max-width: 90%;
+    color: var(--text60);
+    header {
+        flex: 1 1 0;
+    }
+    main {
+        .login-form-container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            background-color: var(--element30);
+            width: 100%;
+            padding-bottom: 3rem;
+            border: 1px solid var(--outline);
+            border-radius: 1rem;
+            form {
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                padding: 0.5rem;
+                width: 80%;
+                gap: 0.5rem;
+                label {
+                    padding: 1rem;
+                    font-size: 2rem;
+                }
+                input {
+                    width: 100%;
+                    height: 2rem;
+                    padding: 0.5rem;
+                    font-size: 1.5rem;
+                    border-radius: 1rem;
+                    border-style: none;
+                }
+            }
+            button {
+                z-index: 1;
+                padding: 2rem;
+                color: var(--text10);
+            }
+            .button-container{
+                padding-top: 3rem;
+            }
+            p {
+                text-align: center;
+            }
+        }
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        flex: 1 1 0;
+    }
+    h1 {
+        color: var(--text30);
+        padding: 3rem 4rem 3rem 0rem;
+    }
+    .login-header {
+        padding: 3rem;
+    }
+}
+/* Project List */
+.project-list {
+    ul {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 1rem;
+        li {
+            background-color: var(--element30);
+            .image-container {
+                width: 6rem;
+                height: 6rem;
+                background-color: black;
+            }
+            p {
+                text-align: center;
+            }
+            input {
+                display: none;
+            }
+        }
+    }
+}
+
+/* Footer */
+body > footer {
+    display: flex;
+    color: white;
+    justify-content: space-evenly;
+    align-items: center;
+    background-color: var(--element30);
+    height: 20vh;
+}
+
+/* Media Query */
+@media (max-width:1000px) {
+    .hero {
+        .hero-container {
+            .text-container {
+                h1 {
+                    font-size: 5.5rem;
+                }
+            }
+        }
+    }
+    .text {
+        .text-container {
+            .img-container {
+                width: 90%;
+            }
+        }
+    }
+    .card-list {
+        ul {
+            flex-direction: column;
+            align-items: center;
+        }
+    }
+    .card {
+        width: 85%;
+    }
+    .forms {
+        flex-direction: column-reverse;
+        header {
+            h1 {
+                font-size: 4rem;
+            }
+            h2 {
+                font-size: 2.5rem;
+            }
+        }
+    }
+}
+
+@media (max-width: 600px) {
+    body > footer {
+        flex-direction: column;
+    }
+}
+
+/* Section Animation Keyframes */
+@keyframes fade-in {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+@keyframes rise-from-below {
+    from {
+        translate: 0 100%;
+    }
+    to {
+        translate: 0 0;
+    }
+}
+
+@keyframes fall-from-above {
+    from {
+        translate: 0 -100%;
+    }
+    to {
+        translate: 0 0;
+    }
+}
+
+@keyframes modify-hero {
+    to {
+        /* Animation Removed - Unnecesary */
+    }
+}

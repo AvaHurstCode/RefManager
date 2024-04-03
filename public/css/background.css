@@ -1,0 +1,81 @@
+.background-anim {
+    z-index: -10;
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    .blur {
+        width: calc(100% - 1px); /* THE BUG IS PRESENT THE OTHER WAY ROUND IN THE LOGIN SCREEN?! */
+        height: calc(100% - 1px); /* Discovered a bug with google chrome, blur cannot touch or overlap with bottom of screen */
+        backdrop-filter: blur(15rem);
+    }
+    .dot {
+        position: absolute;
+        background-color: var(--element10);
+        width: 12rem;
+        height: 12rem;
+        border-radius: 50%;
+    }
+    #dot1 {
+        animation: dot1-animation 20s ease-in-out infinite;
+    }
+    #dot2 {
+        animation: dot2-animation 30s ease-in-out infinite;
+    }
+    #dot3 {
+        animation: dot3-animation 40s ease-in-out infinite;
+    }
+}
+
+@keyframes dot1-animation {
+    0% {
+        translate: 10svw 10svh;
+    }
+    25% {
+        translate: 40svw 50svh;
+    }
+    50% {
+        translate: 80svw 20svh;
+    }
+    75% {
+        translate: 30svw 70svh;
+    }
+    100% {
+        translate: 10svw 10svh;
+    }
+}
+
+@keyframes dot2-animation {
+    0% {
+        translate: 56svw 40svh;
+    }
+    25% {
+        translate: 70svw 30svh;
+    }
+    50% {
+        translate: 40svw 10svh;
+    }
+    75% {
+        translate: 80svw 80svh;
+    }
+    100% {
+        translate: 56svw 40svh;
+    }
+}
+
+@keyframes dot3-animation {
+    0% {
+        translate: 40svw 70svh;
+    }
+    25% {
+        translate: 20svw 80svh;
+    }
+    50% {
+        translate: 20svw 30svh;
+    }
+    75% {
+        translate: 50svw 20svh;
+    }
+    100% {
+        translate: 40svw 70svh;
+    }
+}
