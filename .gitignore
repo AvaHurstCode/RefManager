@@ -6,3 +6,5 @@ node_modules/
 .idea/
 
 *.log
+
+git-filter-repo.exe
